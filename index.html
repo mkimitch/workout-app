@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<meta name="description" content="A fast, accessible workout logger." />
+		<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
+		<link rel="apple-touch-icon" href="/icon.svg" />
+		<link rel="manifest" href="/manifest.webmanifest" />
+		<title>Rack</title>
+		<script>
+			/* Resolves the theme before first paint so there is no flash of the wrong mode. */
+			(function () {
+				try {
+					var stored = localStorage.getItem('workout-app:theme');
+					var explicit = stored === 'dark' || stored === 'light' ? stored : null;
+					var dark =
+						explicit !== null
+							? explicit === 'dark'
+							: window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+					document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+				} catch (error) {
+					document.documentElement.dataset.theme = 'light';
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/main.tsx"></script>
+	</body>
+</html>

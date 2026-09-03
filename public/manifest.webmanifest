@@ -1,0 +1,18 @@
+{
+	"background_color": "#0e0f12",
+	"description": "A fast, accessible workout logger.",
+	"display": "standalone",
+	"icons": [
+		{
+			"purpose": "any",
+			"sizes": "any",
+			"src": "/icon.svg",
+			"type": "image/svg+xml"
+		}
+	],
+	"name": "Rack — Workout Logger",
+	"orientation": "portrait",
+	"short_name": "Rack",
+	"start_url": "/",
+	"theme_color": "#0e0f12"
+}

@@ -1,0 +1,40 @@
+.workout-bar {
+	display: flex;
+	gap: var(--space-3);
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--space-3) var(--layout-gutter);
+	padding-top: calc(var(--space-3) + env(safe-area-inset-top));
+	border-bottom: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+
+	& h1 {
+		font-size: 1.25rem;
+	}
+
+	& > .button {
+		flex-shrink: 0;
+	}
+}
+
+/*
+ * The routine name wraps rather than truncating: at large text sizes an
+ * ellipsis would hide the only label telling you which workout you are in.
+ */
+.workout-bar__identity {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.workout-bar__elapsed {
+	color: var(--color-text-muted);
+	font-size: 1rem;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Keeps the bar's contents aligned with the centred content column. */
+@media (width >= 42rem) {
+	.workout-bar {
+		padding-inline: max(var(--layout-gutter), calc((100% - var(--layout-max)) / 2));
+	}
+}

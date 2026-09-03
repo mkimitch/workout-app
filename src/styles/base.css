@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html {
+	/* Keeps rem-based sizing honest when the OS text size is enlarged. */
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background-color: var(--color-canvas);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	line-height: 1.5;
+	min-height: 100dvh;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.125rem;
+}
+
+h3 {
+	font-size: 1.0625rem;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+button,
+input,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+ol,
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+:focus-visible {
+	outline: 3px solid var(--color-focus);
+	outline-offset: 2px;
+	/* Fills the outline offset so the ring stays visible on any background. */
+	box-shadow: 0 0 0 2px var(--color-focus-contrast);
+}
+
+::selection {
+	background-color: var(--color-accent);
+	color: var(--color-on-accent);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	top: var(--space-2);
+	left: var(--space-2);
+	z-index: 20;
+	padding: var(--space-3) var(--space-4);
+	transform: translateY(-150%);
+	border-radius: var(--radius-md);
+	background-color: var(--color-surface);
+	box-shadow: var(--shadow-raised);
+	color: var(--color-text);
+	font-weight: 600;
+
+	&:focus {
+		transform: translateY(0);
+	}
+}
+
+/* Numeric readouts stay aligned as they tick. */
+.tabular {
+	font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}

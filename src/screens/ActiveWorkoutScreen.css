@@ -1,0 +1,58 @@
+/*
+ * An app shell: the workout name and the rest timer stay put while only the
+ * exercise list scrolls, so the two things a lifter looks for mid-set never
+ * move.
+ */
+.workout {
+	display: grid;
+	grid-template-rows: auto minmax(0, 1fr) auto;
+	height: 100dvh;
+}
+
+.workout__body {
+	display: grid;
+	gap: var(--space-3);
+	align-content: start;
+	width: 100%;
+	max-width: var(--layout-max);
+	margin-inline: auto;
+	padding-block: var(--space-3) calc(var(--space-6) + env(safe-area-inset-bottom));
+	overflow-y: auto;
+}
+
+.workout__progress {
+	padding-inline: var(--layout-gutter);
+	color: var(--color-text-muted);
+	font-size: 0.9375rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.workout__exercises {
+	display: grid;
+	gap: var(--space-3);
+}
+
+.workout__footer-actions {
+	padding-inline: var(--layout-gutter);
+}
+
+.workout__rest {
+	/* At very large text sizes the bar must not crowd out the exercise list. */
+	max-height: 45dvh;
+	padding-bottom: env(safe-area-inset-bottom);
+	overflow-y: auto;
+	background-color: var(--color-surface);
+	box-shadow: var(--shadow-bar);
+
+	& > * {
+		width: 100%;
+		max-width: var(--layout-max);
+		margin-inline: auto;
+	}
+}
+
+@media (width >= 42rem) {
+	.workout__body {
+		padding-inline: var(--layout-gutter);
+	}
+}

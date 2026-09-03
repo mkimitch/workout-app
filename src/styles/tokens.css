@@ -1,0 +1,87 @@
+/*
+ * The resolved theme is stamped onto <html> as data-theme by an inline script
+ * in index.html and kept in sync by useTheme, so light and dark each need to be
+ * described exactly once.
+ */
+:root {
+	color-scheme: light;
+
+	--color-canvas: #f1f1f4;
+	--color-surface: #ffffff;
+	--color-surface-sunken: #e7e7ec;
+	--color-surface-active: #fdf1e9;
+	--color-surface-done: #eef6f0;
+
+	--color-border: #d2d2da;
+	--color-border-strong: #a9a9b4;
+
+	--color-text: #15161a;
+	--color-text-muted: #54565e;
+
+	--color-accent: #a83a12;
+	--color-accent-hover: #8c2f0d;
+	--color-on-accent: #ffffff;
+	--color-accent-quiet: #a83a12;
+
+	--color-success: #1a6b33;
+	--color-danger: #b02418;
+	--color-danger-hover: #8d1c13;
+
+	--color-focus: #101318;
+	--color-focus-contrast: #ffffff;
+
+	--shadow-bar: 0 -1px 0 var(--color-border), 0 -8px 24px rgb(0 0 0 / 8%);
+	--shadow-raised: 0 1px 0 var(--color-border), 0 10px 30px rgb(0 0 0 / 12%);
+}
+
+:root[data-theme='dark'] {
+	color-scheme: dark;
+
+	--color-canvas: #0e0f12;
+	--color-surface: #17191d;
+	--color-surface-sunken: #121317;
+	--color-surface-active: #251a11;
+	--color-surface-done: #16211a;
+
+	--color-border: #2c3037;
+	--color-border-strong: #454b55;
+
+	--color-text: #f1f2f5;
+	--color-text-muted: #a7adb7;
+
+	--color-accent: #f0803c;
+	--color-accent-hover: #ff9558;
+	--color-on-accent: #1c0d04;
+	--color-accent-quiet: #ff9f61;
+
+	--color-success: #66d18e;
+	--color-danger: #ff8f83;
+	--color-danger-hover: #ffada3;
+
+	--color-focus: #ffffff;
+	--color-focus-contrast: #101318;
+
+	--shadow-bar: 0 -1px 0 var(--color-border), 0 -8px 24px rgb(0 0 0 / 45%);
+	--shadow-raised: 0 1px 0 var(--color-border), 0 10px 30px rgb(0 0 0 / 50%);
+}
+
+:root {
+	--font-sans: system-ui, -apple-system, 'Segoe UI', roboto, helvetica, arial, sans-serif;
+
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.5rem;
+	--space-6: 2rem;
+
+	--radius-sm: 0.375rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+
+	/* Minimum comfortable target for a sweaty thumb. */
+	--tap-target: 2.75rem;
+
+	--layout-max: 40rem;
+	--layout-gutter: clamp(0.75rem, 4vw, 1.25rem);
+}

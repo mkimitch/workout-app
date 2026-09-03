@@ -1,0 +1,102 @@
+.summary {
+	display: grid;
+	gap: var(--space-5);
+	max-width: var(--layout-max);
+	margin-inline: auto;
+	padding-block: calc(var(--space-5) + env(safe-area-inset-top))
+		calc(var(--space-6) + env(safe-area-inset-bottom));
+	padding-inline: var(--layout-gutter);
+
+	& h1 {
+		font-size: 1.875rem;
+		letter-spacing: -0.015em;
+	}
+
+	& h2 {
+		margin-block-end: var(--space-3);
+		color: var(--color-text-muted);
+		font-size: 0.9375rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+}
+
+.summary__eyebrow {
+	color: var(--color-accent-quiet);
+	font-size: 0.9375rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.summary__stats {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1px;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-lg);
+	background-color: var(--color-border);
+	overflow: hidden;
+
+	& > div {
+		display: grid;
+		gap: var(--space-1);
+		padding: var(--space-3) var(--space-4);
+		background-color: var(--color-surface);
+	}
+
+	& dt {
+		color: var(--color-text-muted);
+		font-size: 0.9375rem;
+	}
+
+	& dd {
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1.1;
+	}
+}
+
+.summary__highlight {
+	padding: var(--space-3) var(--space-4);
+	border-left: 0.1875rem solid var(--color-accent);
+	background-color: var(--color-surface);
+}
+
+.summary__exercises {
+	display: grid;
+
+	& > li {
+		display: grid;
+		gap: var(--space-1);
+		padding-block: var(--space-3);
+
+		& + li {
+			border-top: 1px solid var(--color-border);
+		}
+	}
+}
+
+.summary__exercise-meta {
+	color: var(--color-text-muted);
+	font-variant-numeric: tabular-nums;
+}
+
+.summary__empty,
+.summary__skipped {
+	color: var(--color-text-muted);
+}
+
+.summary__skipped {
+	margin-block-start: var(--space-3);
+	font-size: 0.9375rem;
+}
+
+.summary__exercise-note {
+	padding: var(--space-2) var(--space-3);
+	border-left: 0.1875rem solid var(--color-border-strong);
+	background-color: var(--color-surface-sunken);
+	font-size: 0.9375rem;
+}
